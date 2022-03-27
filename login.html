@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý oto</title>
+    <link rel="stylesheet" href="login.css">
+
+</head>
+<body>
+<center>
+    <div id="login1">
+        <h1>Chào mừng bạn đến với Tùng Oto</h1>
+        <label>Tên đăng nhập</label> <br>
+        <input type="text" placeholder="Điền tên đăng nhập" id="ten"> <br>
+        <label>Mật khẩu</label> <br>
+        <input type="password" placeholder="******" id="mk"> <br>
+        <button onclick="login1()">Đăng nhập</button>
+        <br>
+        <button onclick="Dangki()">Đăng kí</button>
+    </div>
+</center>
+<script>
+    class Account {
+        username;
+        password;
+
+        constructor(u, p) {
+            this.username = u;
+            this.password = p;
+        }
+    }
+
+    let arr = [];
+    let usn = document.getElementById('ten');
+    let mk = document.getElementById('mk');
+
+    function login1() {
+        arr = JSON.parse(localStorage.getItem('Listacc'));
+        let u = usn.value;
+        let p = mk.value;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].username == u && arr[i].password == p) {
+                alert("Bạn đã đăng nhập thành công")
+                window.location = 'index.html';
+            // } else if (arr[i].username == u && arr[i] != p) {
+            //     alert("Bạn nhập sai mật khẩu");
+            // } else if (arr[i].username != u && arr[i] == p) {
+            //     alert("Bận nhập sai tên đăng nhập");
+            // } else if (arr[i].username != u && arr[i] != p) {
+            //     alert("Bạn nhập sai tên đăng nhập và mật khẩu");
+            // } else{
+            //     alert('Bạn chưa nhập tên đăng nhập và mật khẩu');
+            }
+        }
+    }
+
+    function Dangki() {
+        let u = usn.value;
+        let p = mk.value;
+        let acc = new Account(u, p);
+        if (u != '' && p != '') {
+            arr.push(acc);
+            localStorage.setItem('Listacc', JSON.stringify(arr));
+            alert("Bạn đã đăng kí thành công ");
+            // window.location = 'reget.html';
+        } else if (u == '') {
+            alert("Bạn cần nhập vào tên đăng nhập");
+        } else if (p == '') {
+            alert("Bạn cần nhập vào mật khẩu");
+        } else {
+            alert('Bạn cần nhập tên đăng nhập và mật khẩu')
+        }
+    }
+</script>
+</body>
+</html>

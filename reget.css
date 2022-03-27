@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#display{
+    display: flex;
+    align-items: center;
+}
+#login2 {
+    justify-content: center;
+    width: 50%;
+    border: 1px solid #ffffff;
+    background-color: cyan;
+    border-radius: 20px;
+    margin-top: 20vh;
+}
+h1{
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+input{
+    margin: 5px;
+    border-radius: 5px;
+}
+button{
+    margin: 10px;
+    width: 100px;
+    border-radius: 10px;
+}
+button:hover{
+    cursor: pointer;
+}

@@ -1,0 +1,277 @@
+/* Reset CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#main {
+
+}
+
+#header {
+    height: 46.5px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#nav {
+    display: inline-block;
+}
+
+#nav, .subnav {
+    list-style-type: none;
+}
+
+#nav > li {
+    display: inline-block;
+}
+
+#nav li {
+    position: relative;
+}
+
+#nav > li > a {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#nav li a {
+    font-size: 14px;
+    padding: 0 24px;
+    line-height: 46.5px;
+    text-decoration: none;
+    display: block;
+}
+
+#nav li:hover .subnav {
+    display: block;
+}
+
+#nav > li:hover > a,
+#nav .subnav li:hover a {
+    color: black;
+    background-color: #ccc;
+}
+
+#nav .subnav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    min-width: 160px;
+}
+
+#nav .subnav a {
+    color: black;
+    padding: 0 12px;
+    line-height: 38.5px;
+}
+
+#nav .nav-arrow-down {
+    font-size: 8px;
+}
+
+.displayLogin {
+    padding: 0 60px;
+    float: right;
+}
+
+#header #search-input {
+    float: right;
+    margin: 8px;
+    border-radius: 5px;
+}
+
+#header .search-btn {
+    float: right;
+    padding: 0 30px;
+}
+
+#header .search-btn:hover {
+    background-color: #f44336;
+    cursor: pointer;
+}
+
+#header .search-icon {
+    color: #fff;
+    font-size: 15px;
+    line-height: 46px;
+}
+
+#slider {
+    position: relative;
+    margin-top: 46px;
+    padding-top: 50%;
+    width: 100%;
+    background: url('image/Ferrari.jpg') center/ cover no-repeat;
+}
+
+#slider .text-content {
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    bottom: 47px;
+    /* left: 50%;
+    transform: translateX(-50%);  cách khác khi đưa chữ vào giữa*/
+    width: 100%;
+    /* right: 0;
+    left: 0; 1 cách khác nữa*/
+
+}
+
+#slider .text-head {
+    font-weight: 500;
+    font-size: 24px;
+}
+
+#slider .text-dercrion {
+    font-size: 15px;
+    margin-top: 22px;
+}
+
+#content {
+/*text-align: center;*/
+}
+
+#content .content-section {
+    width: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+
+}
+
+#add {
+
+}
+
+#content .infocar {
+    width: 65%;
+    float: left;
+    background-color: #cccccc;
+}
+
+table {
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+
+}
+.list {
+    margin-left: 20%;
+    padding-bottom: 10%;
+    padding-top: 20%;
+}
+.list2 {
+    color: blue;
+    list-style-type: none;
+    margin-left: 15%;
+}
+.list3 {
+    color: blue;
+    list-style-type: none;
+    margin-left: 15%;
+}
+.list3:hover{
+    cursor: pointer;
+}
+.list2:hover{
+    cursor: pointer;
+}
+.list1 {
+    margin-left: 20%;
+    padding-top: 20%;
+    padding-bottom: 10%;
+}
+#content li{
+    margin: 5% 0;
+}
+button {
+    border-radius: 20px;
+    background-color: aqua;
+    width: 100px;
+}
+
+.btn-them {
+    background-color: chartreuse;
+}
+
+.btn-xoa {
+    background-color: red;
+}
+
+.btn-them, btn-xoa:hover {
+    cursor: pointer;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 30px; /* Location of the box */
+    top: 20%;
+    width: 100%; /* Full width */
+    height: 50%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    /*background-color: rgb(0,0,0); !* Fallback color *!*/
+    /*background-color: rgba(0,0,0,0.4); !* Black w/ opacity *!*/
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#btn {
+    text-align: center;
+}
+
+.btn-edit {
+    background-color: rgb(234, 200, 132);
+}
+
+.abc {
+
+}
+
+#footer {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+#upload {
+    width: 100%;
+}
+
+

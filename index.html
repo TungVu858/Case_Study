@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+            integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="font/themify-icons/themify-icons.css">
+</head>
+<body>
+<div id="main">
+    <div id="header">
+        <!-- Begin nav -->
+        <ul id="nav">
+            <li><a href="">Trang chủ</a></li>
+            <li><a href="">
+                Thêm
+                <i class="nav-arrow-down ti-angle-down"></i>
+            </a>
+                <ul class="subnav">
+                    <li><a href="#footer">Liên hệ</a></li>
+                    <li><a href="#hi">Ảnh</a></li>
+                </ul>
+            </li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href=""></a></li>
+        </ul>
+        <!-- End nav -->
+        <!-- Begin Search -->
+
+        <div class="search-btn">
+
+            <a class="search-icon ti-search" onclick="Search()" style="text-decoration: none"></a>
+        </div>
+        <!--End Search -->
+        <input id="search-input">
+
+    </div>
+
+    <div id="slider">
+        <div class="text-content">
+            <h2 class="text-head">
+                Tùng Oto
+            </h2>
+            <div class="text-dercrion">
+            </div>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="content-section">
+            <div class="list1">Phân loại</div>
+            <div>
+                <ul class="list2">
+                    <li><span class="ti-car" onclick="timall()"> Tất cả xe</span></li>
+                    <li><span class="ti-car" onclick="timten()"> Xe hãng Fernarri</span></li>
+                    <li><span class="ti-car" onclick="timten1()"> Xe hãng Ford</span></li>
+                    <li><span class="ti-car" onclick="timten2()"> Xe hãng Mercedes</span></li>
+                    <li><span class="ti-car" onclick="timten3()"> Xe hãng Toyota</span></li>
+                    <li><span class="ti-car" onclick="timten4()"> Xe hãng Kia</span></li>
+                </ul>
+            </div>
+            <div class="list">Danh mục</div>
+            <div>
+                <ul class="list3">
+                    <li><span class="ti-rocket" onclick="tim(0, 1000000000)"> Tất cả</span></li>
+                    <li><span class="ti-rocket" onclick="tim(0, 1000)"> Dưới 1000$</span></li>
+                    <li><span class="ti-rocket" onclick="tim(1000,3000)"> Từ 1000$ đến 3000$</span></li>
+                    <li><span class="ti-rocket" onclick="tim(3000,5000)"> Từ 3000$ đến 5000$</span></li>
+                    <li><span class="ti-rocket" onclick="tim(5000,7000)"> Từ 5000$ đến 7000$</span></li>
+                    <li><span class="ti-rocket" onclick="tim(7000,10000)"> Từ 7000$ đến 10000$</span></li>
+                    <li><span class="ti-rocket" onclick="tim(10000,100000000)"> Trên 10000$</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="infocar" id="hi">
+            <div>
+                <center>
+                    <p>Thêm xe</p>
+                    <input type="text" placeholder="Thêm xe" id="add">
+                    <button onclick="addCar()">Thêm</button>
+                    <p style="margin: 40px;font-size: 30px">Hiển thị toàn bộ xe</p>
+                </center>
+            </div>
+            <table id="displayCar"></table>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span> <br>
+                    Tên <input id="carName"> <br>
+                    ID <input id="carID"> <br>
+                    Giá : $<input id="carPrice"><br>
+                    Màu <input id="carMau"> <br>
+                    Hãng <input id="carHang"> <br>
+                    <p id="carMedia"></p>
+                    <!--                    <div id="ha">-->
+                    <!--                    </div>-->
+                    <!--                    <div id="upload1"></div>-->
+                    <input type='file' onchange="readURL(this);" id="file1"/>
+                    <img id="upload" src="#" alt="your image"/> <br>
+                    <div id="btn"></div>
+                </div>
+            </div>
+        </div>
+        <div class="abc"></div>
+    </div>
+    <div id="footer">
+        <br><br>
+        <div>SĐT:00000000</div>
+        <br>
+        <div>Bank:12345678</div>
+        <br>
+        <div><a href="https://mail.google.com/" class="ti-google"> Email</a></div>
+        <br>
+        <div><a href="https://www.facebook.com/" class="ti-facebook"> Facebook</a></div>
+        <br>
+        <div><a href="https://twitter.com/?lang=vi" class="ti-twitter-alt"> Twiter</a></div>
+        <br>
+        <div>COPYRIGHT © 2022 TUNGOTO CO., LTD. - DESIGN:TUNG</div>
+    </div>
+
+</div>
+<script>
+    function timall() {
+        displayAll(listCar);
+    }
+
+    function tim(from, to) {
+        let arr = [];
+        for (let i = 0; i < listCar.length; i++) {
+            if (listCar[i].gia >= from && listCar[i].gia <= to) {
+                arr.push(listCar[i])
+            }
+        }
+        displayAll(arr);
+    }
+
+    function timten() {
+        let arr = [];
+        let arr1 = ['F', 'e']
+        for (let i = 0; i < listCar.length; i++) {
+            for (let j = 0; j < listCar[i].ten.length; j++) {
+                // for (let k=0;k<j.length;k++) {
+                if (listCar[i].ten[j] == 'F' &&listCar[i].ten[j+1]=="e") {
+                    console.log(listCar[i].ten[j]);
+                    arr.push(listCar[i]);
+                }
+                // }
+            }
+        }
+        displayAll(arr);
+    }
+    let currentCar = [];
+    function timten1(k) {
+        let arr = [];
+        for (let i = 0; i < listCar.length; i++) {
+            if (listCar[i].hangxe == k) {
+                arr.push(listCar[i])
+            }
+        }
+        displayAll(arr);
+
+    }
+
+    function timten2() {
+        let arr = [];
+        for (let i = 0; i < listCar.length; i++) {
+            if (listCar[i].hangxe == 'Mercesdes') {
+                arr.push(listCar[i])
+            }
+        }
+        displayAll(arr);
+    }
+
+    function timten3() {
+        let arr = [];
+        for (let i = 0; i < listCar.length; i++) {
+            if (listCar[i].hangxe == 'Toyota') {
+                arr.push(listCar[i])
+            }
+        }
+        displayAll(arr);
+    }
+
+    function timten4() {
+        let arr = [];
+        for (let i = 0; i < listCar.length; i++) {
+            if (listCar[i].hangxe == 'Kia') {
+                arr.push(listCar[i])
+            }
+        }
+        displayAll(arr);
+    }
+
+    class Car {
+        ten;
+        id;
+        gia;
+        anh;
+        mau;
+        hangxe;
+
+        constructor(ten, id, gia, anh, mau,hangxe) {
+            this.ten = ten;
+            this.id = id;
+            this.gia = gia;
+            this.anh = anh;
+            this.mau = mau;
+            this.hangxe = hangxe;
+        }
+    }
+
+    let p1 = new Car("Fer-Enzo", 1, 30000, "image/index.png", "Đỏ","Fernari");
+    let p2 = new Car("Ford-EcoSport", 2, 100, "image/ford.jpg", "Trắng","Ford");
+    let p3 = new Car("Merc-e200", 3, 400, "image/merc.jpg", "Trắng","Mercesdes");
+    let p4 = new Car("Fer2022", 4, 5000, "image/car2.gif", "Đen",'Fernari');
+    let p5 = new Car("Toyota", 5, 4000, "image/toyota.jpg", "Trắng",'Toyota');
+    let p6 = new Car("Kia-Morning", 6, 4000, "image/kiamorning.jpg", 'Đỏ','Kia');
+    let p7 = new Car("Ford-EcoSport", 7, 1500, "image/ford.jpg", "Trắng",'Ford');
+    let listCar = [p1, p2, p3, p4, p5, p6, p7];
+
+    function displayAll(listCar) {
+        currentCar = listCar;
+        let car = '<tr>\n' +
+            '<td width="30%" >Car Name</td>\n' +
+            '<td width="10%">Mã số</td>\n' +
+            '<td width="20%">Hình ảnh</td><br>' +
+            '<td width="20%"></td> <br>' +
+            '<td width="20%">' + listCar.length + 'car</td> <br>' +
+            '</tr>'
+        for (let i = 0; i < listCar.length; i++) {
+            car += '<tr><td>' + listCar[i].ten + '</td>' +
+                '<td>' + listCar[i].id + '</td>' +
+                '<td> <img width="100%" src=" ' + listCar[i].anh + '"></td>' +
+                '<td><button class="btn-them" onclick="Edit(' + i + ')">Thông tin' +
+                '</button></td>' +
+                '<td><button class="btn-xoa" onclick="Delete(' + i + ')">Xóa</button></td></tr>'
+        }
+        document.getElementById('displayCar').innerHTML = car;
+        console.log(car);
+    }
+    displayAll(listCar);
+
+    function addCar() {
+        str = document.getElementById('add').value;
+        let stt = parseInt(Math.random() * 20);
+        let rdgia = parseInt(Math.random() * 30000);
+        listCar.push({
+            id: stt,
+            ten: str,
+            gia: rdgia,
+            image: '',
+            mau: '',
+        })
+        displayAll(listCar);
+        // console.log(listCar);
+
+    }
+
+    let modal = document.getElementById('myModal');
+    let span = document.getElementsByClassName('close')[0];
+    let carName = document.getElementById('carName');
+    let carID = document.getElementById('carID');
+    let carPrice = document.getElementById('carPrice');
+    let carMedia = document.getElementById('carMedia');
+    let carMau = document.getElementById('carMau');
+    let carHang = document.getElementById('carHang');
+
+    function Edit(index) {
+        modal.style.display = 'block';
+        span.onclick = function () {
+            modal.style.display = 'none';
+        }
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        carName.value = currentCar[index].ten;
+        carID.value = currentCar[index].id;
+        carPrice.value = currentCar[index].gia;
+        carMau.value = currentCar[index].mau;
+        carHang.value = currentCar[index].hangxe;
+        carMedia.innerHTML = '<img width="100%" src="' + currentCar[index].anh + '">';
+        // document.getElementById('ha').innerHTML = '<input type="file"onChange="'+readURL+'('+this+')"/>';
+        // document.getElementById('upload1').innerHTML = '<img id="upload" src="#" /> <br>';
+        // function readURL(input) {
+        //     if (input.files && input.files[0]) {
+        //         let reader = new FileReader();
+        //
+        //         reader.onload = function (e) {
+        //             $('#upload')
+        //                 .attr('src', e.target.result);
+        //         };
+        //
+        //         reader.readAsDataURL(input.files[0]);
+        //     }
+        // }
+        document.getElementById('btn').innerHTML = '<button onclick="Update(' + index + ')" class="btn-edit">Sửa</button>'
+        document.getElementById('upload').src = "";
+    }
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            let reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#upload')
+                    .attr('src', e.target.result);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    function Update(index) {
+        if (confirm('Bạn có muốn sửa ' + listCar[index].ten + ' không')) {
+            alert("Bạn đã sửa thành công " + listCar[index].ten);
+            listCar[index].ten = carName.value;
+            listCar[index].id = carID.value;
+            listCar[index].gia = carPrice.value;
+            listCar[index].mau = carMau.value;
+            listCar[index].hangxe = carHang.value;
+            listCar[index].anh = document.getElementById('upload').src;
+        }
+        displayAll(listCar);
+    }
+
+    function Delete(index) {
+        if (confirm("Bạn có muốn xóa " + currentCar[index].ten + " không")) {
+            alert("Bạn đã xóa thành công " + currentCar[index].ten);
+            currentCar.splice(index, 1);
+            displayAll(listCar);
+        }
+    }
+</script>
+</body>
+</html>
