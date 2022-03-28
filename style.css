@@ -159,7 +159,6 @@ html {
 #content .infocar {
     width: 65%;
     float: left;
-    background-color: #cccccc;
 }
 
 table {
@@ -268,7 +267,21 @@ button {
     float: left;
     width: 100%;
     text-align: center;
+    background-color: #f8f9fa;
+    font-family: Dancing Script;
+    line-height: 1.5;
 }
+/*.footer-left{*/
+/*    float: left;*/
+/*    background: url("image/back.jpg") center/cover no-repeat;*/
+/*    width: 15%;*/
+/*}*/
+/*.footer-mid{*/
+/*    float: left;*/
+/*    width: 65%;*/
+/*    text-align: center;*/
+/*}*/
+
 
 #upload {
     width: 100%;

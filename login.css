@@ -3,6 +3,10 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    /*position: relative;*/
+    /*background: url("image/back.jpg") center/cover no-repeat;*/
+}
 #display{
     display: flex;
     align-items: center;

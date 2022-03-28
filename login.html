@@ -36,21 +36,28 @@
 
     function login1() {
         arr = JSON.parse(localStorage.getItem('Listacc'));
+        console.log(arr);
         let u = usn.value;
         let p = mk.value;
         for (let i = 0; i < arr.length; i++) {
-            if (arr[i].username == u && arr[i].password == p) {
-                alert("Bạn đã đăng nhập thành công")
-                window.location = 'index.html';
-            // } else if (arr[i].username == u && arr[i] != p) {
-            //     alert("Bạn nhập sai mật khẩu");
-            // } else if (arr[i].username != u && arr[i] == p) {
-            //     alert("Bận nhập sai tên đăng nhập");
-            // } else if (arr[i].username != u && arr[i] != p) {
-            //     alert("Bạn nhập sai tên đăng nhập và mật khẩu");
-            // } else{
-            //     alert('Bạn chưa nhập tên đăng nhập và mật khẩu');
-            }
+            // for (let j =0;j<arr[i].length;j++){
+                if (arr[i].username == u && arr[i].password == p) {
+                    alert("Bạn đã đăng nhập thành công")
+                    window.location = 'index.html';
+                    break;
+                    } else if (arr[i].username == u && arr[i].password != p) {
+                        alert("Bạn nhập sai mật khẩu");
+                        break;
+                    } else if (arr[i].username != u && arr[i].password == p) {
+                        alert("Bận nhập sai tên đăng nhập");
+                        break;
+                    } else if (arr[i].username != u && arr[i].password != p ) {
+                        alert("Bạn nhập sai tên đăng nhập hoặc mật khẩu");
+                        break;
+                    // } else{
+                    //     alert('Bạn chưa nhập tên đăng nhập và mật khẩu');
+                }
+            // }
         }
     }
 
