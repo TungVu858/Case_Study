@@ -40,24 +40,14 @@
         let u = usn.value;
         let p = mk.value;
         for (let i = 0; i < arr.length; i++) {
-            // for (let j =0;j<arr[i].length;j++){
-                if (arr[i].username == u && arr[i].password == p) {
-                    alert("Bạn đã đăng nhập thành công")
-                    window.location = 'index.html';
-                    break;
-                    } else if (arr[i].username == u && arr[i].password != p) {
-                        alert("Bạn nhập sai mật khẩu");
-                        break;
-                    } else if (arr[i].username != u && arr[i].password == p) {
-                        alert("Bận nhập sai tên đăng nhập");
-                        break;
-                    } else if (arr[i].username != u && arr[i].password != p ) {
-                        alert("Bạn nhập sai tên đăng nhập hoặc mật khẩu");
-                        break;
-                    // } else{
-                    //     alert('Bạn chưa nhập tên đăng nhập và mật khẩu');
-                }
-            // }
+            if (arr[i].username == u && arr[i].password == p) {
+                alert("Bạn đã đăng nhập thành công")
+                window.location = 'index.html';
+                break;
+            } else if (arr[i].username != u && arr[i].password != p || arr[i].username == u && arr[i].password != p || arr[i].username != u && arr[i].password == p) {
+                alert("Bạn nhập sai tên đăng nhập hoặc mật khẩu");
+                break;
+            }
         }
     }
 

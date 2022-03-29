@@ -36,7 +36,7 @@
                 </ul>
             </li>
             <li><a href="login.html">Login</a></li>
-<!--            <li><a href="#hi" onclick="Xep()">Sắp xếp</a></li>-->
+            <!--            <li><a href="#hi" onclick="Xep()">Sắp xếp</a></li>-->
         </ul>
         <!-- End nav -->
         <!-- Begin Search -->
@@ -71,6 +71,7 @@
                     <li><span class="ti-car" onclick="timten('Mercedes')"> Xe hãng Mercedes</span></li>
                     <li><span class="ti-car" onclick="timten('Toyota')"> Xe hãng Toyota</span></li>
                     <li><span class="ti-car" onclick="timten('Kia')"> Xe hãng Kia</span></li>
+                    <li><span class="ti-car" onclick="timten('')"> Xe hãng khác</span></li>
                 </ul>
             </div>
             <div class="list">Giá</div>
@@ -105,9 +106,6 @@
                     Màu <input id="carMau"> <br>
                     Hãng <input id="carHang"> <br>
                     <p id="carMedia"></p>
-                    <!--                    <div id="ha">-->
-                    <!--                    </div>-->
-                    <!--                    <div id="upload1"></div>-->
                     <input type='file' onchange="readURL(this);" id="file1"/>
                     <img id="upload" src="#" alt="your image"/> <br>
                     <div id="btn"></div>
@@ -117,7 +115,6 @@
         <div class="abc"></div>
     </div>
     <div id="footer">
-        <!--        <div class="footer-left"></div>-->
         <div class="footer-mid">
             <br>
             <div style="font-size: 25px;font-weight: 500">Vũ Thanh Tùng</div>
@@ -136,57 +133,10 @@
             <hr>
             <div style="font-size: 20px ;font-weight: 500">COPYRIGHT © 2022 TUNGOTO CO., LTD. - DESIGN:TUNG</div>
         </div>
-        <!--        <div class="footer-right"></div>-->
+
     </div>
 </div>
 <script>
-    // function Xep() {
-    //     let arr = [];
-    //     for (let i =0;i<listCar.length;i++){
-    //         listCar.sort(listCar[i].ten);
-    //         arr.push(listCar[i]);
-    //     }
-    //     displayAll(arr);
-    // }
-    function timall() {
-        displayAll(listCar);
-    }
-
-    function tim(from, to) {
-        let arr = [];
-        for (let i = 0; i < listCar.length; i++) {
-            if (listCar[i].gia >= from && listCar[i].gia <= to) {
-                arr.push(listCar[i]);
-            }
-        }
-        displayAll(arr);
-    }
-
-    let inputSearch = document.getElementById('search-input');
-
-    function Search() {
-        let arr = [];
-        for (let i = 0; i < listCar.length; i++) {
-            if (listCar[i].hangxe == inputSearch.value) {
-                arr.push(listCar[i]);
-            }
-        }
-        displayAll(arr);
-    }
-
-
-    let currentCar = [];
-
-    function timten(k) {
-        let arr = [];
-        for (let i = 0; i < listCar.length; i++) {
-            if (listCar[i].hangxe == k) {
-                arr.push(listCar[i]);
-            }
-        }
-        displayAll(arr);
-    }
-
 
     class Car {
         ten;
@@ -214,6 +164,7 @@
     let p6 = new Car("Kia-Morning", 6, 4000, "image/kiamorning.jpg", 'Đỏ', 'Kia');
     let p7 = new Car("Ford-EcoSport", 7, 1500, "image/ford.jpg", "Trắng", 'Ford');
     let listCar = [p1, p2, p3, p4, p5, p6, p7];
+    let currentCar = [];
 
     function displayAll(listCar) {
         currentCar = listCar;
@@ -241,26 +192,22 @@
         str = document.getElementById('add').value;
         let stt = parseInt(Math.random() * 20);
         let rdgia = parseInt(Math.random() * 30000);
-        if (str == ''){
+        if (str == '') {
             alert('Tên xe không đc để trống')
-        }
-        else {
+        } else {
             let newstr = str[0].toUpperCase() + str.slice(1);
-            currentCar.push({
-                id: stt,
+            listCar.push({
                 ten: newstr,
+                id: stt,
                 gia: rdgia,
                 image: '',
                 mau: '',
                 hangxe: '',
             })
-            console.log(str);
             alert("Bạn đã thêm thành công " + str);
-            displayAll(currentCar);
+            displayAll(listCar);
         }
-
-        // console.log(listCar);
-
+        // localStorage.setItem('ListCar', JSON.stringify(listCar));
     }
 
     let modal = document.getElementById('myModal');
@@ -288,20 +235,6 @@
         carMau.value = currentCar[index].mau;
         carHang.value = currentCar[index].hangxe;
         carMedia.innerHTML = '<img width="100%" src="' + currentCar[index].anh + '">';
-        // document.getElementById('ha').innerHTML = '<input type="file"onChange="'+readURL+'('+this+')"/>';
-        // document.getElementById('upload1').innerHTML = '<img id="upload" src="#" /> <br>';
-        // function readURL(input) {
-        //     if (input.files && input.files[0]) {
-        //         let reader = new FileReader();
-        //
-        //         reader.onload = function (e) {
-        //             $('#upload')
-        //                 .attr('src', e.target.result);
-        //         };
-        //
-        //         reader.readAsDataURL(input.files[0]);
-        //     }
-        // }
         document.getElementById('btn').innerHTML = '<button onclick="Update(' + index + ')" class="btn-edit">Sửa</button>'
         document.getElementById('upload').src = "";
     }
@@ -328,17 +261,44 @@
             currentCar[index].mau = carMau.value;
             currentCar[index].hangxe = carHang.value;
             currentCar[index].anh = document.getElementById('upload').src;
+            modal.style.display = 'block';
         }
-        displayAll(currentCar);
+        displayAll(listCar);
     }
 
     function Delete(index) {
         if (confirm("Bạn có muốn xóa " + currentCar[index].ten + " không")) {
             alert("Bạn đã xóa thành công " + currentCar[index].ten);
             currentCar.splice(index, 1);
-            displayAll(currentCar);
         }
+        displayAll(currentCar);
     }
+
+    function timall() {
+        displayAll(listCar);
+    }
+
+    function timten(k) {
+        let arr = [];
+        for (let i = 0; i < listCar.length; i++) {
+            if (listCar[i].hangxe == k) {
+                arr.push(listCar[i]);
+            }
+        }
+        displayAll(arr);
+    }
+
+    function tim(from, to) {
+        let arr = [];
+        for (let i = 0; i < listCar.length; i++) {
+            if (listCar[i].gia >= from && listCar[i].gia <= to) {
+                arr.push(listCar[i]);
+            }
+        }
+        displayAll(arr);
+    }
+
+
 </script>
 </body>
 </html>
