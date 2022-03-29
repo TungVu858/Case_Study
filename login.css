@@ -3,9 +3,13 @@
     margin: 0;
     box-sizing: border-box;
 }
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
 body{
     /*position: relative;*/
     /*background: url("image/back.jpg") center/cover no-repeat;*/
+    background-color: black;
 }
 #display{
     display: flex;
@@ -14,14 +18,18 @@ body{
 #login1 {
     justify-content: center;
     width: 50%;
-    border: 1px solid #ffffff;
-    background-color: cyan;
+    border: 1px solid #015d8f;
+    background-color: #015d8f;
     border-radius: 20px;
     margin-top: 20vh;
 }
 h1{
     text-transform: uppercase;
     margin-bottom: 20px;
+    color: white;
+}
+label {
+    color: white;
 }
 input{
     margin: 5px;
@@ -31,6 +39,9 @@ button{
     margin: 10px;
     width: 100px;
     border-radius: 10px;
+    background-color: #d80300;
+    border: 1px solid #d80300;
+    color: white;
 }
 button:hover{
     cursor: pointer;

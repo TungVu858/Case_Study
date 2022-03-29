@@ -132,16 +132,21 @@ html {
 
 #slider .text-head {
     font-weight: 500;
-    font-size: 24px;
+    font-size: 40px;
 }
 
 #slider .text-dercrion {
     font-size: 15px;
-    margin-top: 22px;
+    margin-top: 15%;
 }
-
+.slogan{
+    margin-top: 5%;
+    font-size: 30px;
+    font-weight: 500;
+}
 #content {
 /*text-align: center;*/
+
 }
 
 #content .content-section {
@@ -159,6 +164,7 @@ html {
 #content .infocar {
     width: 65%;
     float: left;
+    /*background-color: #b53033;*/
 }
 
 table {
@@ -197,17 +203,23 @@ table {
     margin: 5% 0;
 }
 button {
+    border: 1px solid #ffffff;
     border-radius: 20px;
-    background-color: aqua;
+    background-color: #1f6161;
     width: 100px;
+    color: white;
 }
 
 .btn-them {
-    background-color: chartreuse;
+    border: 1px solid #d80300;
+    background-color: #d80300;
+    color: white;
 }
 
 .btn-xoa {
-    background-color: red;
+    border: 1px solid #d80300;
+    background-color: #d80300;
+    color: white;
 }
 
 .btn-them, btn-xoa:hover {
@@ -281,7 +293,16 @@ button {
 /*    width: 65%;*/
 /*    text-align: center;*/
 /*}*/
-
+@media screen  and (max-width: 900px){
+    .abc{
+        width: 0%;
+    }
+}
+@media screen  and (max-width: 900px){
+    .content-section{
+        width: 0%;
+    }
+}
 
 #upload {
     width: 100%;
