@@ -139,13 +139,15 @@ html {
     font-size: 15px;
     margin-top: 15%;
 }
-.slogan{
+
+.slogan {
     margin-top: 4%;
     font-size: 30px;
     font-weight: 500;
 }
+
 #content {
-/*text-align: center;*/
+    /*text-align: center;*/
 
 }
 
@@ -173,35 +175,43 @@ table {
     width: 100%;
 
 }
+
 .list {
     margin-left: 20%;
     padding-bottom: 10%;
     padding-top: 20%;
 }
+
 .list2 {
     color: blue;
     list-style-type: none;
     margin-left: 15%;
 }
+
 .list3 {
     color: blue;
     list-style-type: none;
     margin-left: 15%;
 }
-.list3:hover{
+
+.list3:hover {
     cursor: pointer;
 }
-.list2:hover{
+
+.list2:hover {
     cursor: pointer;
 }
+
 .list1 {
     margin-left: 20%;
     padding-top: 20%;
     padding-bottom: 10%;
 }
-#content li{
+
+#content li {
     margin: 5% 0;
 }
+
 button {
     border: 1px solid #015d8f;
     border-radius: 20px;
@@ -217,6 +227,7 @@ button {
 }
 
 .btn-xoa {
+    float: left;
     border: 1px solid #d80300;
     background-color: #d80300;
     color: white;
@@ -268,7 +279,9 @@ button {
 }
 
 .btn-edit {
-    background-color: rgb(234, 200, 132);
+    border: 1px solid #015d8f;
+    background-color: #015d8f;
+    color: white;
 }
 
 .abc {
@@ -283,6 +296,7 @@ button {
     font-family: Dancing Script;
     line-height: 1.5;
 }
+
 /*.footer-left{*/
 /*    float: left;*/
 /*    background: url("image/back.jpg") center/cover no-repeat;*/
@@ -293,13 +307,13 @@ button {
 /*    width: 65%;*/
 /*    text-align: center;*/
 /*}*/
-@media screen  and (max-width: 900px){
-    .abc{
-        width: 0%;
-    }
-}
-@media screen  and (max-width: 900px){
-    .content-section{
+/*@media screen  and (max-width: 900px){*/
+/*    .abc{*/
+/*        width: 0%;*/
+/*    }*/
+/*}*/
+@media only screen and (max-width: 900px) {
+    .content-section {
         width: 0%;
     }
 }
