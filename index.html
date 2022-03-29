@@ -187,15 +187,16 @@
     }
 
     displayAll(listCar);
+    let str = document.getElementById('add');
 
     function addCar() {
-        str = document.getElementById('add').value;
+
         let stt = parseInt(Math.random() * 20);
         let rdgia = parseInt(Math.random() * 30000);
-        if (str == '') {
+        if (str.value == '') {
             alert('Tên xe không đc để trống')
         } else {
-            let newstr = str[0].toUpperCase() + str.slice(1);
+            let newstr = str.value[0].toUpperCase() + str.value.slice(1);
             listCar.push({
                 ten: newstr,
                 id: stt,
@@ -204,9 +205,10 @@
                 mau: '',
                 hangxe: '',
             })
-            alert("Bạn đã thêm thành công " + str);
+            alert("Bạn đã thêm thành công " + str.value);
             displayAll(listCar);
         }
+        str.value = '';
         // localStorage.setItem('ListCar', JSON.stringify(listCar));
     }
 
@@ -261,7 +263,7 @@
             currentCar[index].mau = carMau.value;
             currentCar[index].hangxe = carHang.value;
             currentCar[index].anh = document.getElementById('upload').src;
-            modal.style.display = 'block';
+            modal.style.display = 'none';
         }
         displayAll(listCar);
     }
