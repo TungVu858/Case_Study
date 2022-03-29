@@ -137,10 +137,10 @@ html {
 
 #slider .text-dercrion {
     font-size: 15px;
-    margin-top: 14%;
+    margin-top: 15%;
 }
 .slogan{
-    margin-top: 5%;
+    margin-top: 4%;
     font-size: 30px;
     font-weight: 500;
 }
@@ -203,9 +203,9 @@ table {
     margin: 5% 0;
 }
 button {
-    border: 1px solid #ffffff;
+    border: 1px solid #015d8f;
     border-radius: 20px;
-    background-color: #1f6161;
+    background-color: #015d8f;
     width: 100px;
     color: white;
 }
