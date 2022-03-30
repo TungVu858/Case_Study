@@ -47,18 +47,14 @@
 
     function login1() {
         arr = JSON.parse(localStorage.getItem('Listacc'));
-        console.log(arr);
         let u = usn.value;
         let p = mk.value;
         for (let i = 0; i < arr.length; i++) {
-            if (arr[i].username == u && arr[i].password == p) {
+            if (arr[i].username === u && arr[i].password === p) {
                 alert("Bạn đã đăng nhập thành công");
                 window.location = 'index.html';
                 break;
             }
-                // else {
-            //     alert("Bạn nhập sai tên đăng nhập hoặc mật khẩu");
-            // }
         }
     }
 

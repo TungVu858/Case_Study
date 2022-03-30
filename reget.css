@@ -1,12 +1,14 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-#display{
+
+#display {
     display: flex;
     align-items: center;
 }
+
 #login2 {
     justify-content: center;
     width: 50%;
@@ -15,19 +17,23 @@
     border-radius: 20px;
     margin-top: 20vh;
 }
-h1{
+
+h1 {
     text-transform: uppercase;
     margin-bottom: 20px;
 }
-input{
+
+input {
     margin: 5px;
     border-radius: 5px;
 }
-button{
+
+button {
     margin: 10px;
     width: 100px;
     border-radius: 10px;
 }
-button:hover{
+
+button:hover {
     cursor: pointer;
 }

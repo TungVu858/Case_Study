@@ -7,45 +7,48 @@
 </head>
 <body>
 <center>
-<div id="login2">
-    <h1>Chào mừng bạn đến với trang đăng kí tài khoản</h1>
-<label>Tên đăng nhập</label> <br>
-<input type="text" placeholder="Điền tên đăng nhập" id="ten"> <br>
-<label>Mật khẩu</label> <br>
-<input type="password" placeholder="******" id="mk"> <br>
-<label>Nhập lại mật khẩu</label> <br>
-<input type="password" placeholder="******" id="mk1"> <br>
-<label>Số điện thoại</label> <br>
-<input type="number" placeholder="xxxxxxx" id="sdt"> <br>
-<label>Email</label> <br>
-<input type="email" placeholder="@gmai.com"> <br>
-<button onclick="Dangki1()">Đăng kí</button>
-</div>
+    <div id="login2">
+        <h1>Chào mừng bạn đến với trang đăng kí tài khoản</h1>
+        <label>Tên đăng nhập</label> <br>
+        <input type="text" placeholder="Điền tên đăng nhập" id="ten"> <br>
+        <label>Mật khẩu</label> <br>
+        <input type="password" placeholder="******" id="mk"> <br>
+        <label>Nhập lại mật khẩu</label> <br>
+        <input type="password" placeholder="******" id="mk1"> <br>
+        <label>Số điện thoại</label> <br>
+        <input type="number" placeholder="xxxxxxx" id="sdt"> <br>
+        <label>Email</label> <br>
+        <input type="email" placeholder="@gmai.com"> <br>
+        <button onclick="Dangki1()">Đăng kí</button>
+    </div>
 </center>
 <script>
     class Account {
         username;
         password;
-        constructor(u,p) {
+
+        constructor(u, p) {
             this.username = u;
             this.password = p;
         }
     }
+
     let arr = [];
     let usn = document.getElementById('ten');
     let mk = document.getElementById('mk');
     let rmk = document.getElementById('mk1');
+
     function Dangki1() {
         let u = usn.value;
         let p = mk.value;
         let rp = rmk.value;
-        if (p ==rp){
-            let acc = new Account(u,p);
+        if (p == rp) {
+            let acc = new Account(u, p);
             arr.push(acc);
-            localStorage.setItem('Listacc',JSON.stringify(arr));
+            localStorage.setItem('Listacc', JSON.stringify(arr));
             alert("Bạn đã đăng kí thành công ");
             window.location = 'login.html';
-        } else if (p!=rp) {
+        } else if (p != rp) {
             alert("Bạn cần nhập mật khẩu và nhập lại giống nhau ")
         }
 
