@@ -277,7 +277,9 @@ button {
 #btn {
     text-align: center;
 }
-
+#btn1{
+    text-align: center;
+}
 .btn-edit {
     border: 1px solid #015d8f;
     background-color: #015d8f;

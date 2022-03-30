@@ -110,6 +110,8 @@
                     <input type='file' onchange="readURL(this);" id="file1"/>
                     <img id="upload" src="#" alt="your image"/> <br>
                     <div id="btn"></div>
+                    <br> <br>
+                    <div id="btn1"></div>
                 </div>
             </div>
         </div>
@@ -238,10 +240,12 @@
         carMau.value = currentCar[index].mau;
         carHang.value = currentCar[index].hangxe;
         carMedia.innerHTML = '<img width="100%" src="' + currentCar[index].anh + '">';
-        document.getElementById('btn').innerHTML = '<button onclick="Update(' + index + ')" class="btn-edit">Sửa</button>'
+        document.getElementById('btn').innerHTML = '<button onclick="Update(' + index + ')" class="btn-edit">Sửa</button>'+' ' +'<button onclick="Huy()" class="btn-edit">Hủy</button>';
         document.getElementById('upload').src = "";
     }
-
+    function Huy() {
+        modal.style.display = 'none';
+    }
     function readURL(input) {
         if (input.files && input.files[0]) {
             let reader = new FileReader();
